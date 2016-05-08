@@ -1,0 +1,11 @@
+.global	MAZECONFIG
+.global	MAZEDATA
+.global	MAZEDATA0
+.global	MAZEDATA1
+.global	MAZEDATA2
+.global	MAZEDATA3
+.global	MAZEDATA4
+.global MENUDATA
+
+FRUITCELLX	= 10
+FRUITCELLY	= 13

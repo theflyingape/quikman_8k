@@ -1,0 +1,135 @@
+Modules list:
+-------------
+quikman+8k.o:
+    CODE              Offs = 000000   Size = 00102F
+    RODATA            Offs = 000000   Size = 0001EB
+    BASIC             Offs = 000000   Size = 00000E
+    STARTUP           Offs = 000000   Size = 0001F3
+    SPLASH            Offs = 000000   Size = 000400
+    MYDATA            Offs = 000000   Size = 000400
+    MYCHAR            Offs = 000000   Size = 000400
+VIC-SSS-MMX.o:
+    SPRITE            Offs = 000000   Size = 0006D5
+mazedata.o:
+    RODATA            Offs = 0001EB   Size = 000711
+
+
+Segment list:
+-------------
+Name                  Start   End     Size
+--------------------------------------------
+BASIC                 0011FF  00120C  00000E
+STARTUP               00120D  0013FF  0001F3
+SPLASH                001400  0017FF  000400
+MYDATA                001800  001BFF  000400
+MYCHAR                001C00  001FFF  000400
+CODE                  002000  00302E  00102F
+SPRITE                00302F  003703  0006D5
+RODATA                003704  003FFF  0008FC
+
+
+Exports list:
+-------------
+MAZEDATA0                 0038EF RLA    MAZEDATA1                 003A36 RLA    
+MAZEDATA2                 003B85 RLA    MAZEDATA3                 003CD7 RLA    
+MAZEDATA4                 003E26 RLA    MENU                      00206A RLA    
+MENUDATA                  003F7C RLA    NOTES                     001AE2 RLA    
+SPRITEBUFH                00033C REA    SPRITEBUFL                000341 REA    
+SPRITEC1H                 000346 REA    SPRITEC1L                 00034B REA    
+SPRITEC2H                 000350 REA    SPRITEC2L                 000355 REA    
+SPRITECOL                 00035A REA    SPRITEDEF                 00035F REA    
+SPRITEH                   000364 REA    SPRITEIMGH                000369 REA    
+SPRITEIMGL                00036E REA    SPRITEX                   000373 REA    
+SPRITEY                   000378 REA    SPRITEZ                   00037D REA    
+SSSBUF                    000100 REA    SSSCREATE                 00332C RLA    
+SSSFFLIP                  003221 RLA    SSSFLIP                   00322C RLA    
+SSSINIT                   00302F RLA    SSSIRQ                    0030A3 RLA    
+SSSPEEK                   0031DE RLA    SSSPEEKXY                 0031BD RLA    
+SSSPLOT                   0030E2 RLA    SSSPOKE                   0031ED RLA    
+SSSPRINT                  003125 RLA    SSSPRINTS                 003171 RLA    
+SSSREFRESH                00341F RLA    sss                       000382 REA    
+sssALLOC                  003704 RLA    sssCOLS                   003724 RLA    
+sssROWS                   003714 RLA    
+
+
+Imports list:
+-------------
+MAZEDATA0 (mazedata.o):
+    quikman+8k.o              mazedata.h(3)
+MAZEDATA1 (mazedata.o):
+    quikman+8k.o              mazedata.h(4)
+MAZEDATA2 (mazedata.o):
+    quikman+8k.o              mazedata.h(5)
+MAZEDATA3 (mazedata.o):
+    quikman+8k.o              mazedata.h(6)
+MAZEDATA4 (mazedata.o):
+    quikman+8k.o              mazedata.h(7)
+MENU (quikman+8k.o):
+    VIC-SSS-MMX.o             VIC-SSS-MMX.s(519)
+MENUDATA (mazedata.o):
+    quikman+8k.o              mazedata.h(8)
+NOTES (quikman+8k.o):
+    VIC-SSS-MMX.o             VIC-SSS-MMX.s(512)
+SPRITEBUFH (quikman+8k.o):
+    VIC-SSS-MMX.o             VIC-SSS-MMX.h(100)
+SPRITEBUFL (quikman+8k.o):
+    VIC-SSS-MMX.o             VIC-SSS-MMX.h(101)
+SPRITEC1H (quikman+8k.o):
+    VIC-SSS-MMX.o             VIC-SSS-MMX.h(102)
+SPRITEC1L (quikman+8k.o):
+    VIC-SSS-MMX.o             VIC-SSS-MMX.h(103)
+SPRITEC2H (quikman+8k.o):
+    VIC-SSS-MMX.o             VIC-SSS-MMX.h(104)
+SPRITEC2L (quikman+8k.o):
+    VIC-SSS-MMX.o             VIC-SSS-MMX.h(105)
+SPRITECOL (quikman+8k.o):
+    VIC-SSS-MMX.o             VIC-SSS-MMX.h(106)
+SPRITEDEF (quikman+8k.o):
+    VIC-SSS-MMX.o             VIC-SSS-MMX.h(109)
+SPRITEH (quikman+8k.o):
+    VIC-SSS-MMX.o             VIC-SSS-MMX.h(118)
+SPRITEIMGH (quikman+8k.o):
+    VIC-SSS-MMX.o             VIC-SSS-MMX.h(119)
+SPRITEIMGL (quikman+8k.o):
+    VIC-SSS-MMX.o             VIC-SSS-MMX.h(120)
+SPRITEX (quikman+8k.o):
+    VIC-SSS-MMX.o             VIC-SSS-MMX.h(121)
+SPRITEY (quikman+8k.o):
+    VIC-SSS-MMX.o             VIC-SSS-MMX.h(122)
+SPRITEZ (quikman+8k.o):
+    VIC-SSS-MMX.o             VIC-SSS-MMX.h(123)
+SSSBUF (quikman+8k.o):
+    VIC-SSS-MMX.o             VIC-SSS-MMX.h(98)
+SSSCREATE (VIC-SSS-MMX.o):
+    quikman+8k.o              VIC-SSS-MMX.h(167)
+SSSFFLIP (VIC-SSS-MMX.o):
+    quikman+8k.o              VIC-SSS-MMX.h(173)
+SSSFLIP (VIC-SSS-MMX.o):
+    quikman+8k.o              VIC-SSS-MMX.h(174)
+SSSINIT (VIC-SSS-MMX.o):
+    quikman+8k.o              VIC-SSS-MMX.h(157)
+SSSIRQ (VIC-SSS-MMX.o):
+    quikman+8k.o              VIC-SSS-MMX.h(158)
+SSSPEEK (VIC-SSS-MMX.o):
+    quikman+8k.o              VIC-SSS-MMX.h(164)
+SSSPEEKXY (VIC-SSS-MMX.o):
+    quikman+8k.o              VIC-SSS-MMX.h(165)
+SSSPLOT (VIC-SSS-MMX.o):
+    quikman+8k.o              VIC-SSS-MMX.h(161)
+SSSPOKE (VIC-SSS-MMX.o):
+    quikman+8k.o              VIC-SSS-MMX.h(166)
+SSSPRINT (VIC-SSS-MMX.o):
+    quikman+8k.o              VIC-SSS-MMX.h(162)
+SSSPRINTS (VIC-SSS-MMX.o):
+    quikman+8k.o              VIC-SSS-MMX.h(163)
+SSSREFRESH (VIC-SSS-MMX.o):
+    quikman+8k.o              VIC-SSS-MMX.h(172)
+sss (quikman+8k.o):
+    VIC-SSS-MMX.o             VIC-SSS-MMX.h(131)
+sssALLOC (quikman+8k.o):
+    VIC-SSS-MMX.o             VIC-SSS-MMX.h(132)
+sssCOLS (quikman+8k.o):
+    VIC-SSS-MMX.o             VIC-SSS-MMX.h(133)
+sssROWS (quikman+8k.o):
+    VIC-SSS-MMX.o             VIC-SSS-MMX.h(134)
+
