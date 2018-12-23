@@ -275,7 +275,16 @@ BULBS:	.byte	1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
 		.byte	145,144,143,142,141,140,139,138,137,136,135,134,133,132,131,130,129,128,127
 		.byte	105,84,63,42,21
 FDEMO:	.byte	$00
-QMAN:   .byte   $3C, $7E, $BD, $FF, $BD, $C3, $7E, $3C  ; evil otto
+QMAN:		;evil otto
+		.byte	%00111100
+		.byte	%01111110
+		.byte	%10111101
+		.byte	%11111111
+		.byte	%10111101
+		.byte	%11000011
+		.byte	%01111110
+		.byte	%00111100
+
 		.segment "SPLASH"
 SPLASHDATA:
 		.byte	$22,$7D,$7D,$7D,$7D,$7D,$7D,$7D,$7D,$7D,$7D,$7D,$7D,$7D,$7D,$7D,$7D,$7D,$7D,$7D,$22
@@ -823,12 +832,60 @@ GHOST0:	.byte	%00000000	; $60 for your eyes only
 		.byte	%00000000
 		.byte	%00000000
 		.byte	%00000000
-GHOST1:	.byte	$1C, $3E, $7F, $64, $7F, $7F, $7F, $55	; $68 right
-GHOST2:	.byte	$1C, $3E, $7F, $7F, $49, $7F, $7F, $55	; $70 down
-GHOST3:	.byte	$38, $7C, $FE, $26, $FE, $FE, $FE, $AA	; $78 left
-GHOST4:	.byte	$38, $7C, $FE, $FE, $FE, $FE, $FE, $AA	; $80 up
-GHOST5:	.byte	$38, $7C, $FE, $92, $FE, $82, $FE, $AA	; $88 caged
-GHOST6:	.byte	$3C, $7E, $FF, $99, $FF, $81, $FF, $55	; $90 fleeing
+GHOST1:		;$68 right
+		.byte	%00011100
+		.byte	%00111110
+		.byte	%01111111
+		.byte	%01100100
+		.byte	%01111111
+		.byte	%01111111
+		.byte	%01111111
+		.byte	%01010101
+GHOST2:		;$70 down
+		.byte	%00011100
+		.byte	%00111110
+		.byte	%01111111
+		.byte	%01111111
+		.byte	%01001001
+		.byte	%01111111
+		.byte	%01111111
+		.byte	%01010101
+GHOST3:		;$78 left
+		.byte	%00111000
+		.byte	%01111100
+		.byte	%11111110
+		.byte	%00100110
+		.byte	%11111110
+		.byte	%11111110
+		.byte	%11111110
+		.byte	%10101010
+GHOST4:		;$80 up
+		.byte	%00111000
+		.byte	%01111100
+		.byte	%11111110
+		.byte	%11111110
+		.byte	%11111110
+		.byte	%11111110
+		.byte	%11111110
+		.byte	%10101010
+GHOST5:		;$88 caged
+		.byte	%00111000
+		.byte	%01111100
+		.byte	%11111110
+		.byte	%10010010
+		.byte	%11111110
+		.byte	%10000010
+		.byte	%11111110
+		.byte	%10101010
+GHOST6:		;$90 fleeing
+		.byte	%00111100
+		.byte	%01111110
+		.byte	%11111111
+		.byte	%10011001
+		.byte	%11111111
+		.byte	%10000001
+		.byte	%11111111
+		.byte	%01010101
 		; life icon
 		.byte	%00111100
 		.byte	%01111110
@@ -876,49 +933,369 @@ GHOST6:	.byte	$3C, $7E, $FF, $99, $FF, $81, $FF, $55	; $90 fleeing
 		.byte	%00111100
 		.byte	%11111000
 		.byte	%01110000
-		.byte	$04, $08, $18, $24, $62, $F7, $F2, $60	; $C0 cherry
-		.byte	$10, $7C, $FE, $AA, $D6, $AA, $54, $28	; $C8 strawberry
-		.byte	$20, $10, $7C, $FE, $FE, $FE, $7C, $38	; $D0 peach
-		.byte	$08, $10, $7C, $FE, $FE, $FE, $7C, $28	; $D8 apple
-		.byte	$28, $10, $54, $AA, $FE, $54, $AA, $7C	; $E0 pineapple
-		.byte	$92, $D6, $FE, $FE, $FE, $54, $10, $10	; $E8 tbird
-		.byte	$10, $38, $7C, $7C, $7C, $7C, $FE, $10	; $F0 bell
-		.byte	$18, $24, $18, $08, $08, $18, $08, $18	; $F8 key
+		;$C0 cherry
+		.byte	%00000100
+		.byte	%00001000
+		.byte	%00011000
+		.byte	%00100100
+		.byte	%01100010
+		.byte	%11110111
+		.byte	%11110010
+		.byte	%01100000
+		;$C8 strawberry
+		.byte	%00010000
+		.byte	%01111100
+		.byte	%11111110
+		.byte	%10101010
+		.byte	%11010110
+		.byte	%10101010
+		.byte	%01010100
+		.byte	%00101000
+		;$D0 peach
+		.byte	%00100000
+		.byte	%00010000
+		.byte	%01111100
+		.byte	%11111110
+		.byte	%11111110
+		.byte	%11111110
+		.byte	%01111100
+		.byte	%00111000
+		;$D8 apple
+		.byte	%00001000
+		.byte	%00010000
+		.byte	%01111100
+		.byte	%11111110
+		.byte	%11111110
+		.byte	%11111110
+		.byte	%01111100
+		.byte	%00101000
+		;$E0 pineapple
+		.byte	%00101000
+		.byte	%00010000
+		.byte	%01010100
+		.byte	%10101010
+		.byte	%11111110
+		.byte	%01010100
+		.byte	%10101010
+		.byte	%01111100
+		;$E8 tbird
+		.byte	%10010010
+		.byte	%11010110
+		.byte	%11111110
+		.byte	%11111110
+		.byte	%11111110
+		.byte	%01010100
+		.byte	%00010000
+		.byte	%00010000
+		;$F0 bell
+		.byte	%00010000
+		.byte	%00111000
+		.byte	%01111100
+		.byte	%01111100
+		.byte	%01111100
+		.byte	%01111100
+		.byte	%11111110
+		.byte	%00010000
+		;$F8 key
+		.byte	%00011000
+		.byte	%00100100
+		.byte	%00011000
+		.byte	%00001000
+		.byte	%00001000
+		.byte	%00011000
+		.byte	%00001000
+		.byte	%00011000
 		;
 		; 32-63
 		; maze tiles
-		.byte	$00, $00, $00, $00, $00, $00, $00, $00	; $00 empty space
-		.byte	$00, $00, $00, $18, $18, $00, $00, $00	; $08 dot
-		.byte	$00, $3C, $7E, $7E, $7E, $7E, $3C, $00	; $10 powerpill (animated)
-POOF1:	.byte	$00, $10, $10, $6C, $10, $10, $00, $00	; $18 explosion
-POOF2:	.byte	$10, $44, $28, $C6, $28, $44, $10, $00	; $20 smoke
-POOF3:	.byte	$92, $44, $00, $82, $00, $44, $92, $00	; $28 dust
-		.byte	$00, $00, $55, $FF, $FF, $AA, $00, $00	; $30 door
-		.byte	$00, $55, $01, $03, $03, $01, $55, $00	; $38 doorway east
-		.byte	$00, $55, $40, $C0, $C0, $40, $55, $00	; $40 doorway west
-		.byte	$00, $FF, $00, $00, $00, $00, $00, $00	; $48 maze wall h-top
-		.byte	$00, $00, $00, $00, $00, $00, $FF, $00	; $50 maze wall h-bottom
-		.byte	$40, $40, $40, $40, $40, $20, $1F, $00	; $58 maze wall s-w corner
-		.byte	$02, $02, $02, $02, $02, $04, $F8, $00	; $60 maze wall s-e corner
-		.byte	$00, $1F, $20, $40, $40, $40, $40, $40	; $68 maze wall n-w corner
-		.byte	$00, $F8, $04, $02, $02, $02, $02, $02	; $70 maze wall n-e corner
-		.byte	$00, $18, $24, $42, $42, $42, $42, $42	; $78 maze wall north
-		.byte	$42, $42, $42, $42, $42, $24, $18, $00	; $80 maze wall south
-		.byte	$00, $1F, $20, $40, $40, $20, $1F, $00	; $88 maze wall west
-		.byte	$00, $F8, $04, $02, $02, $04, $F8, $00	; $90 maze wall east
-		.byte	$42, $41, $40, $40, $40, $20, $1F, $00	; $98 maze wall s-w elbow
-		.byte	$42, $82, $02, $02, $02, $04, $F8, $00	; $A0 maze wall s-e elbow
-		.byte	$00, $1F, $20, $40, $40, $40, $41, $42	; $A8 maze wall n-w elbow
-		.byte	$00, $F8, $04, $02, $02, $02, $82, $42	; $B0 maze wall n-e elbow
-		.byte	$42, $42, $42, $42, $42, $42, $42, $42	; $B8 maze wall vertical
-		.byte	$00, $FF, $00, $00, $00, $00, $FF, $00	; $C0 maze wall horizontal
-		.byte	$42, $41, $40, $40, $40, $40, $41, $42	; $C8 maze wall west tee
-		.byte	$42, $82, $02, $02, $02, $02, $82, $42	; $D0 maze wall east tee
-		.byte	$00, $FF, $00, $00, $00, $00, $81, $42	; $D8 maze wall north tee
-		.byte	$42, $81, $00, $00, $00, $00, $FF, $00	; $E0 maze wall south tee
-		.byte	$42, $81, $00, $00, $00, $00, $81, $42	; $E8 maze wall cross
-		.byte	$00, $FF, $00, $00, $00, $00, $80, $40	; $F0 maze wall north west tee
-		.byte	$00, $FF, $00, $00, $00, $00, $01, $02	; $F8 maze wall north east tee
+		;$00 empty space
+		.byte	%00000000
+		.byte	%00000000
+		.byte	%00000000
+		.byte	%00000000
+		.byte	%00000000
+		.byte	%00000000
+		.byte	%00000000
+		.byte	%00000000
+		;$08 dot
+		.byte	%00000000
+		.byte	%00000000
+		.byte	%00000000
+		.byte	%00011000
+		.byte	%00011000
+		.byte	%00000000
+		.byte	%00000000
+		.byte	%00000000
+		;$10 powerpill (animated)
+		.byte	%00000000
+		.byte	%00111100
+		.byte	%01111110
+		.byte	%01111110
+		.byte	%01111110
+		.byte	%01111110
+		.byte	%00111100
+		.byte	%00000000
+POOF1:		;$18 explosion
+		.byte	%00000000
+		.byte	%00010000
+		.byte	%00010000
+		.byte	%01101100
+		.byte	%00010000
+		.byte	%00010000
+		.byte	%00000000
+		.byte	%00000000
+POOF2:		;$20 smoke
+		.byte	%00010000
+		.byte	%01000100
+		.byte	%00101000
+		.byte	%11000110
+		.byte	%00101000
+		.byte	%01000100
+		.byte	%00010000
+		.byte	%00000000
+POOF3:		;$28 dust
+		.byte	%10010010
+		.byte	%01000100
+		.byte	%00000000
+		.byte	%10000010
+		.byte	%00000000
+		.byte	%01000100
+		.byte	%10010010
+		.byte	%00000000
+		;$30 door
+		.byte	%00000000
+		.byte	%00000000
+		.byte	%01010101
+		.byte	%11111111
+		.byte	%11111111
+		.byte	%10101010
+		.byte	%00000000
+		.byte	%00000000
+		;$38 doorway east
+		.byte	%00000000
+		.byte	%01010101
+		.byte	%00000001
+		.byte	%00000011
+		.byte	%00000011
+		.byte	%00000001
+		.byte	%01010101
+		.byte	%00000000
+		;$40 doorway west
+		.byte	%00000000
+		.byte	%01010101
+		.byte	%01000000
+		.byte	%11000000
+		.byte	%11000000
+		.byte	%01000000
+		.byte	%01010101
+		.byte	%00000000
+		;$48 maze wall h-top
+		.byte	%00000000
+		.byte	%11111111
+		.byte	%00000000
+		.byte	%00000000
+		.byte	%00000000
+		.byte	%00000000
+		.byte	%00000000
+		.byte	%00000000
+		;$50 maze wall h-bottom
+		.byte	%00000000
+		.byte	%00000000
+		.byte	%00000000
+		.byte	%00000000
+		.byte	%00000000
+		.byte	%00000000
+		.byte	%11111111
+		.byte	%00000000
+		;$58 maze wall s-w corner
+		.byte	%01000000
+		.byte	%01000000
+		.byte	%01000000
+		.byte	%01000000
+		.byte	%01000000
+		.byte	%00100000
+		.byte	%00011111
+		.byte	%00000000
+		;$60 maze wall s-e corner
+		.byte	%00000010
+		.byte	%00000010
+		.byte	%00000010
+		.byte	%00000010
+		.byte	%00000010
+		.byte	%00000100
+		.byte	%11111000
+		.byte	%00000000
+		;$68 maze wall n-w corner
+		.byte	%00000000
+		.byte	%00011111
+		.byte	%00100000
+		.byte	%01000000
+		.byte	%01000000
+		.byte	%01000000
+		.byte	%01000000
+		.byte	%01000000
+		;$70 maze wall n-e corner
+		.byte	%00000000
+		.byte	%11111000
+		.byte	%00000100
+		.byte	%00000010
+		.byte	%00000010
+		.byte	%00000010
+		.byte	%00000010
+		.byte	%00000010
+		;$78 maze wall north
+		.byte	%00000000
+		.byte	%00011000
+		.byte	%00100100
+		.byte	%01000010
+		.byte	%01000010
+		.byte	%01000010
+		.byte	%01000010
+		.byte	%01000010
+		;$80 maze wall south
+		.byte	%01000010
+		.byte	%01000010
+		.byte	%01000010
+		.byte	%01000010
+		.byte	%01000010
+		.byte	%00100100
+		.byte	%00011000
+		.byte	%00000000
+		;$88 maze wall west
+		.byte	%00000000
+		.byte	%00011111
+		.byte	%00100000
+		.byte	%01000000
+		.byte	%01000000
+		.byte	%00100000
+		.byte	%00011111
+		.byte	%00000000
+		;$90 maze wall east
+		.byte	%00000000
+		.byte	%11111000
+		.byte	%00000100
+		.byte	%00000010
+		.byte	%00000010
+		.byte	%00000100
+		.byte	%11111000
+		.byte	%00000000
+		;$98 maze wall s-w elbow
+		.byte	%01000010
+		.byte	%01000001
+		.byte	%01000000
+		.byte	%01000000
+		.byte	%01000000
+		.byte	%00100000
+		.byte	%00011111
+		.byte	%00000000
+		;$A0 maze wall s-e elbow
+		.byte	%01000010
+		.byte	%10000010
+		.byte	%00000010
+		.byte	%00000010
+		.byte	%00000010
+		.byte	%00000100
+		.byte	%11111000
+		.byte	%00000000
+		;$A8 maze wall n-w elbow
+		.byte	%00000000
+		.byte	%00011111
+		.byte	%00100000
+		.byte	%01000000
+		.byte	%01000000
+		.byte	%01000000
+		.byte	%01000001
+		.byte	%01000010
+		;$B0 maze wall n-e elbow
+		.byte	%00000000
+		.byte	%11111000
+		.byte	%00000100
+		.byte	%00000010
+		.byte	%00000010
+		.byte	%00000010
+		.byte	%10000010
+		.byte	%01000010
+		;$B8 maze wall vertical
+		.byte	%01000010
+		.byte	%01000010
+		.byte	%01000010
+		.byte	%01000010
+		.byte	%01000010
+		.byte	%01000010
+		.byte	%01000010
+		.byte	%01000010
+		;$C0 maze wall horizontal
+		.byte	%00000000
+		.byte	%11111111
+		.byte	%00000000
+		.byte	%00000000
+		.byte	%00000000
+		.byte	%00000000
+		.byte	%11111111
+		.byte	%00000000
+		;$C8 maze wall west tee
+		.byte	%01000010
+		.byte	%01000001
+		.byte	%01000000
+		.byte	%01000000
+		.byte	%01000000
+		.byte	%01000000
+		.byte	%01000001
+		.byte	%01000010
+		;$D0 maze wall east tee
+		.byte	%01000010
+		.byte	%10000010
+		.byte	%00000010
+		.byte	%00000010
+		.byte	%00000010
+		.byte	%00000010
+		.byte	%10000010
+		.byte	%01000010
+		;$D8 maze wall north tee
+		.byte	%00000000
+		.byte	%11111111
+		.byte	%00000000
+		.byte	%00000000
+		.byte	%00000000
+		.byte	%00000000
+		.byte	%10000001
+		.byte	%01000010
+		;$E0 maze wall south tee
+		.byte	%01000010
+		.byte	%10000001
+		.byte	%00000000
+		.byte	%00000000
+		.byte	%00000000
+		.byte	%00000000
+		.byte	%11111111
+		.byte	%00000000
+		;$E8 maze wall cross
+		.byte	%01000010
+		.byte	%10000001
+		.byte	%00000000
+		.byte	%00000000
+		.byte	%00000000
+		.byte	%00000000
+		.byte	%10000001
+		.byte	%01000010
+		;$F0 maze wall north west tee
+		.byte	%00000000
+		.byte	%11111111
+		.byte	%00000000
+		.byte	%00000000
+		.byte	%00000000
+		.byte	%00000000
+		.byte	%10000000
+		.byte	%01000000
+		;$F8 maze wall north east tee
+		.byte	%00000000
+		.byte	%11111111
+		.byte	%00000000
+		.byte	%00000000
+		.byte	%00000000
+		.byte	%00000000
+		.byte	%00000001
+		.byte	%00000010
 		;
 GRAPHICS4:
 		; 64-79
